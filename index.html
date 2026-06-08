@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="particles.js" defer></script>
+    <script src="depthline.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="sky"></div>
+    <div class="wave-container">
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+    </div>
+    <div class="wave-transition"></div>
+    <div class="ocean">
+      <div class="sunlight-zone-background">
+        <div class="caustics"></div>
+        <div class="alt-caustics"></div>
+      </div>
+      <div class="sunlight-zone">
+        <div class="zone-wrapper">
+          <div class="zone-marker">THE SUNLIGHT ZONE</div>
+          <div class="zone-description">Most</div>
+        </div>
+        <div class="creature-wrapper swimmer">
+          <div class="swimmer-image"></div>
+          <div class="description">Humans swim easily here.</div>
+        </div>
+        <div class="creature-wrapper reef">
+          <div class="reef-image"></div>
+          <div class="description">
+            Most reefs need sunlight to photosynthesize, so they sit around 20m.
+          </div>
+        </div>
+        <div class="creature-wrapper gbreef">
+          <div class="gbreef-image"></div>
+          <div class="description">
+            Unless it's the Great Barrier Reef, which has its shallows at 35m.
+          </div>
+        </div>
+        <div class="creature-wrapper free-dive">
+          <div class="free-dive-image"></div>
+          <div class="description">
+            Alexey Molchanoc has the deepest equipment-free freediving record at
+            102m.
+          </div>
+        </div>
+      </div>
+      <div class="sunlight-transition"></div>
+      <div class="deep-ocean">
+        <div class="twilight-zone">
+          <div class="zone-wrapper">
+            <div class="zone-marker">THE TWILIGHT ZONE</div>
+            <div class="zone-description">
+              This layer of the ocean stretches between 200m and 1000m. A bit of
+              sun can still get here.
+            </div>
+          </div>
+          <div class="twilight-dapple"></div>
+          <div class="creature-wrapper thick-billed-murre">
+            <div class="thick-billed-murre-image"></div>
+            <div class="description">
+              The Thick-Billed Murre can dive to a depth of about 210m.
+            </div>
+          </div>
+          <div class="creature-wrapper free-dive">
+            <div class="free-dive-image"></div>
+            <div class="description">
+              Set by Herbert Nitsch, the world freediving record is 253m.
+            </div>
+          </div>
+          <div class="creature-wrapper gbreef-slope">
+            <div class="gbreef-slope-image"></div>
+            <div class="description">
+              The Great Barrier Reef's deepest continetal slope drops 2,000m.
+            </div>
+          </div>
+        </div>
+        <div class="twilight-transition"></div>
+        <div class="midnight-zone"></div>
+        <div class="abyss"></div>
+        <div class="hadal-zone"></div>
+        <div id="particle-container-far" class="particle-container-far"></div>
+        <div id="particle-container-near" class="particle-container-near"></div>
+      </div>
+      <div id="depth-line" class="depth-line">Meters Deep</div>
+    </div>
+  </body>
+</html>
