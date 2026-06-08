@@ -55,12 +55,6 @@ function createParticleSystem({
 
     const size = rand(minSize, maxSize);
 
-    // shape variance — most are circles, some are elongated
-    const isElongated = Math.random() < 0.3;
-    const borderRadius = isElongated
-      ? `${rand(30, 50)}% ${rand(50, 70)}% ${rand(30, 50)}% ${rand(50, 70)}% / ${rand(40, 60)}% ${rand(40, 60)}% ${rand(40, 60)}% ${rand(40, 60)}%`
-      : "50%";
-
     const life = rand(minLife, maxLife);
     const color = colors[randInt(0, colors.length - 1)];
     const x = spawnZone.left + Math.random() * spawnZone.width;
@@ -77,7 +71,7 @@ function createParticleSystem({
     el.className = "particle" + (isFlicker ? " particle--flicker" : "");
     el.style.cssText = [
       `width:${size}px`,
-      `height:${isElongated ? size * rand(0.4, 0.7) : size}px`, // squish height for elongated
+      `height:${size}px`, // squish height for elongated
       `left:${x}px`,
       `top:${y}px`,
       `background:${color}`,
@@ -138,7 +132,7 @@ const farSystem = createParticleSystem({
   containerId: "particle-container-far",
   ratePerSecond: 4,
   minSize: 1,
-  maxSize: 5,
+  maxSize: 3,
   minLife: 10_000,
   maxLife: 30_000,
   colors: ["#ffffff"],
@@ -149,7 +143,7 @@ const nearSystem = createParticleSystem({
   containerId: "particle-container-near",
   ratePerSecond: 3,
   minSize: 1,
-  maxSize: 3,
+  maxSize: 5,
   minLife: 10_000,
   maxLife: 30_000,
   colors: ["#ffffff"],
