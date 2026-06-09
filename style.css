@@ -700,6 +700,9 @@ body {
   margin-top: -182061px;
   height: 100%;
   position: relative;
+  margin-left: 32px;
+  margin-right: 32px;
+  z-index: 21;
 }
 
 .creature-wrapper {
@@ -708,14 +711,173 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  max-width: 300px;
   margin-top: -15px;
+  position: relative;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .creature-wrapper .image:hover + .description {
+    display: block;
+  }
+  .creature-wrapper:hover {
+    z-index: 200;
+  }
+}
+
+.creature-wrapper .image:active + .description {
+  display: block;
+}
+
+.creature-wrapper:active {
+  z-index: 200;
+}
+
+.creature-wrapper .image {
+  z-index: 10;
 }
 
 .description {
+  display: none;
+  transition: display 0.3s ease-in-out;
+  background: #def9fc;
+  border: 4px solid #76d2df;
+  border-radius: 40px;
+  padding: 20px 32px;
+  font-weight: bold;
+  color: #3a3220;
+  line-height: 1.4;
+  position: relative;
+  min-width: 180px;
+  max-width: 280px;
+  width: max-content;
+  z-index: 100;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5rem;
+}
+
+@keyframes bob-gentle {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  30% {
+    transform: translateY(-6px) rotate(1.5deg);
+  }
+  60% {
+    transform: translateY(-3px) rotate(-1deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes bob-lazy {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  40% {
+    transform: translateY(-8px) rotate(2.5deg);
+  }
+  70% {
+    transform: translateY(-2px) rotate(-0.5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes bob-zippy {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  20% {
+    transform: translateY(-5px) rotate(-2deg);
+  }
+  45% {
+    transform: translateY(-9px) rotate(1deg);
+  }
+  65% {
+    transform: translateY(-4px) rotate(2.5deg);
+  }
+  85% {
+    transform: translateY(-7px) rotate(-1.5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
 }
 
 /* Sunlight Zone */
+
+.swimmer {
+  position: absolute;
+  top: 65px;
+  left: 15%;
+  z-index: 20;
+}
+
+.swimmer-image {
+  background-color: saddlebrown;
+  width: 100px;
+  height: 50px;
+}
+
+.blowfish {
+  position: absolute;
+  top: 66px;
+  left: 70%;
+  z-index: 20;
+}
+
+.blowfish-image {
+  background-color: yellow;
+  width: 100px;
+  height: 50px;
+  animation: bob-gentle 4s ease-in-out infinite;
+}
+
+.clownfish {
+  position: absolute;
+  top: 220px;
+  left: 4%;
+  z-index: 20;
+}
+
+.clownfish-image {
+  background-color: orange;
+  width: 100px;
+  height: 50px;
+  animation: bob-gentle 4s ease-in-out infinite;
+}
+
+.seahorse {
+  position: absolute;
+  top: 247px;
+  left: 20%;
+  z-index: 20;
+}
+
+.seahorse-image {
+  background-color: orange;
+  width: 100px;
+  height: 50px;
+}
+
+.butterfly-fish {
+  position: absolute;
+  top: 297px;
+  left: 50%;
+  z-index: 20;
+}
+
+.butterfly-fish-image {
+  background-color: purple;
+  width: 100px;
+  height: 50px;
+  animation: bob-lazy 4s ease-in-out infinite;
+}
 
 .reef {
   position: absolute;
@@ -728,6 +890,20 @@ body {
   background-color: pink;
   width: 100px;
   height: 50px;
+}
+
+.surgeon-fish {
+  position: absolute;
+  top: 350px;
+  left: 10%;
+  z-index: 20;
+}
+
+.surgeon-fish-image {
+  background-color: blue;
+  width: 100px;
+  height: 50px;
+  animation: bob-zippy 4s ease-in-out infinite;
 }
 
 .gbreef {
@@ -743,15 +919,72 @@ body {
   height: 50px;
 }
 
-.swimmer {
+.zebra-turkeyfish {
   position: absolute;
-  top: 65px;
-  left: 15%;
+  top: 950px;
+  left: 80%;
   z-index: 20;
 }
 
-.swimmer-image {
-  background-color: saddlebrown;
+.zebra-turkeyfish-image {
+  background-color: red;
+  width: 100px;
+  height: 50px;
+  animation: bob-lazy 4s ease-in-out infinite;
+}
+
+.sturgeon {
+  position: absolute;
+  top: 990px;
+  left: 20%;
+  z-index: 20;
+}
+
+.sturgeon-image {
+  background-color: brown;
+  width: 100px;
+  height: 50px;
+  animation: bob-lazy 4s ease-in-out infinite;
+}
+
+.giant-trevally {
+  position: absolute;
+  top: 1320px;
+  left: 50%;
+  z-index: 20;
+}
+
+.giant-trevally-image {
+  background-color: grey;
+  animation: bob-zippy 4s ease-in-out infinite;
+  width: 100px;
+  height: 50px;
+}
+
+.mahi-mahi {
+  position: absolute;
+  top: 1402px;
+  left: 20%;
+  z-index: 20;
+}
+
+.mahi-mahi-image {
+  background-color: greenyellow;
+  animation: bob-gentle 4s ease-in-out infinite;
+  width: 100px;
+  height: 50px;
+}
+
+.napoleonfish {
+  position: absolute;
+  top: 1650px;
+  left: 80%;
+  z-index: 20;
+}
+
+.napoleonfish-image {
+  background-color: darkcyan;
+  animation: bob-gentle 4s ease-in-out infinite;
   width: 100px;
   height: 50px;
 }
@@ -797,6 +1030,47 @@ body {
   height: 50px;
 }
 
+.sea-butterfly {
+  position: absolute;
+  top: 6600px;
+  left: 30%;
+  z-index: 20;
+}
+
+.sea-butterfly-image {
+  background-color: orange;
+  width: 100px;
+  height: 50px;
+}
+
+.emperor-penguin {
+  position: absolute;
+  top: 8250px;
+  left: 30%;
+  z-index: 20;
+}
+
+.emperor-penguin-image {
+  background-color: black;
+  width: 100px;
+  height: 50px;
+}
+
+.blue-marlin {
+  position: absolute;
+  top: 9900px;
+  left: 75%;
+  z-index: 20;
+}
+
+.blue-marlin-image {
+  background-color: dodgerblue;
+  width: 100px;
+  height: 50px;
+  animation: bob-zippy 4s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
 .bluefin-tuna {
   position: absolute;
   top: 13200px;
@@ -808,4 +1082,21 @@ body {
   background-color: slategray;
   width: 100px;
   height: 50px;
+  animation: bob-gentle 4s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.salmon {
+  position: absolute;
+  top: 16632px;
+  left: 75%;
+  z-index: 20;
+}
+
+.salmon-image {
+  background-color: salmon;
+  width: 100px;
+  height: 50px;
+  animation: bob-gentle 4s ease-in-out infinite;
+  animation-delay: 0s;
 }

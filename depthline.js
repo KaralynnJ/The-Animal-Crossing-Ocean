@@ -20,3 +20,33 @@ window.addEventListener("scroll", updateScrollDepth);
 
 // Run once on load to initialize at 0
 window.addEventListener("load", updateScrollDepth);
+
+document.querySelectorAll(".creature-wrapper").forEach((wrapper) => {
+  const reposition = () => {
+    const desc = wrapper.querySelector(".description");
+    desc.style.left = "50%";
+    desc.style.transform = "translateX(-50%)";
+    desc.style.right = "";
+
+    const rect = desc.getBoundingClientRect();
+    if (rect.left < 8) {
+      desc.style.left = "0";
+      desc.style.transform = "translateX(0)";
+    } else if (rect.right > window.innerWidth - 8) {
+      desc.style.left = "auto";
+      desc.style.right = "0";
+      desc.style.transform = "none";
+    }
+  };
+
+  const reset = () => {
+    const desc = wrapper.querySelector(".description");
+    desc.style.left = "";
+    desc.style.right = "";
+    desc.style.transform = "";
+  };
+
+  wrapper.addEventListener("mouseenter", reposition);
+  wrapper.addEventListener("mouseleave", reset);
+  wrapper.addEventListener("touchstart", reposition, { passive: true });
+});
