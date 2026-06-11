@@ -35,7 +35,7 @@ body {
   transform: translateY(-50%);
   transition: opacity 0.3s ease-in-out;
   width: 100%;
-  z-index: 20;
+  z-index: 10000;
   opacity: 0;
 }
 
@@ -699,12 +699,25 @@ body {
   position: relative;
   z-index: 21;
   overflow: hidden;
-  --xs: 75px;
-  --sm: 125px;
-  --md: 200px;
-  --lg: 325px;
-  --xl: 525px;
-  --xxl: 850px;
+  --scale: 1;
+  --xs: calc(75px * var(--scale));
+  --sm: calc(125px * var(--scale));
+  --md: calc(200px * var(--scale));
+  --lg: calc(325px * var(--scale));
+  --xl: calc(525px * var(--scale));
+  --xxl: calc(850px * var(--scale));
+}
+
+@media (max-width: 768px) {
+  .the-creatures {
+    --scale: 0.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .the-creatures {
+    --scale: 0.4;
+  }
 }
 
 .creature-wrapper {
@@ -916,7 +929,7 @@ body {
 .barred-knifejaw {
   position: absolute;
   top: 300px;
-  right: 20%;
+  right: 15%;
   z-index: 20;
 }
 
@@ -978,7 +991,7 @@ body {
 .pufferfish {
   position: absolute;
   top: 660px;
-  left: 30%;
+  left: 10%;
   z-index: 20;
 }
 
@@ -990,7 +1003,7 @@ body {
 .ray {
   position: absolute;
   top: 825px;
-  left: 70%;
+  left: 50%;
   z-index: 20;
 }
 
@@ -1001,20 +1014,20 @@ body {
 
 .moray {
   position: absolute;
-  top: 775px;
+  top: 700px;
   left: 40%;
   z-index: 20;
 }
 
 .moray img {
-  width: var(--md);
+  width: var(--xl);
   animation: bob-gentle 4s ease-in-out infinite;
 }
 
 .anchovy {
   position: absolute;
-  top: 825px;
-  left: 40%;
+  top: 850px;
+  left: 8%;
   z-index: 20;
 }
 
@@ -1025,8 +1038,8 @@ body {
 
 .ribbon-eel {
   position: absolute;
-  top: 940px;
-  left: 60%;
+  top: 900px;
+  left: 30%;
   z-index: 20;
 }
 
@@ -1037,8 +1050,8 @@ body {
 
 .zebra-turkeyfish {
   position: absolute;
-  top: 950px;
-  left: 80%;
+  top: 1100px;
+  left: 75%;
   z-index: 20;
 }
 
@@ -1049,7 +1062,7 @@ body {
 
 .sturgeon {
   position: absolute;
-  top: 990px;
+  top: 1300px;
   left: 20%;
   z-index: 20;
 }
@@ -1061,7 +1074,7 @@ body {
 
 .giant-trevally {
   position: absolute;
-  top: 1320px;
+  top: 1550px;
   left: 50%;
   z-index: 20;
 }
@@ -1073,8 +1086,8 @@ body {
 
 .mahi-mahi {
   position: absolute;
-  top: 1402px;
-  left: 20%;
+  top: 1545px;
+  left: 7%;
   z-index: 20;
 }
 
@@ -1085,7 +1098,7 @@ body {
 
 .olive-flounder {
   position: absolute;
-  top: 1450px;
+  top: 1700px;
   left: 70%;
   z-index: 20;
 }
@@ -1097,7 +1110,7 @@ body {
 
 .dab {
   position: absolute;
-  top: 1600px;
+  top: 1700px;
   left: 30%;
   z-index: 20;
 }
@@ -1115,19 +1128,19 @@ body {
 }
 
 .napoleonfish img {
-  width: var(--xxl);
+  width: var(--xl);
   animation: bob-gentle 4s ease-in-out infinite;
 }
 
 .sea-bass {
   position: absolute;
   top: 2145px;
-  left: 60%;
+  left: 20%;
   z-index: 20;
 }
 
 .sea-bass img {
-  width: (--xl);
+  width: var(--xl);
   animation: bob-gentle 4s ease-in-out infinite;
 }
 
@@ -1196,7 +1209,7 @@ body {
 .mola-mola {
   position: absolute;
   top: 7920px;
-  left: 30%;
+  left: 25%;
   z-index: 20;
 }
 
@@ -1207,8 +1220,8 @@ body {
 
 .squid {
   position: absolute;
-  top: 8000px;
-  left: 30%;
+  top: 7800px;
+  left: 20%;
   z-index: 20;
 }
 
@@ -1220,7 +1233,7 @@ body {
 .blue-marlin {
   position: absolute;
   top: 9900px;
-  left: 75%;
+  left: 10%;
   z-index: 20;
 }
 
@@ -1231,25 +1244,25 @@ body {
 
 .barreleye {
   position: absolute;
-  top: 11550px;
+  top: 12050px;
   left: 75%;
   z-index: 20;
 }
 
+.barreleye img {
+  width: var(--sm);
+  animation: bob-gentle 4s ease-in-out infinite;
+}
+
 .bluefin-tuna {
   position: absolute;
-  top: 9900px;
-  left: 75%;
+  top: 10500px;
+  left: 25%;
   z-index: 20;
 }
 
 .bluefin-tuna img {
   width: var(--xxl);
-  animation: bob-gentle 4s ease-in-out infinite;
-}
-
-.barreleye img {
-  width: var(--sm);
   animation: bob-gentle 4s ease-in-out infinite;
 }
 
@@ -1291,7 +1304,7 @@ body {
 
 .salmon {
   position: absolute;
-  top: 4950px;
+  top: 5000px;
   left: 50%;
   z-index: 20;
 }
@@ -1304,13 +1317,13 @@ body {
 .hammerhead {
   position: absolute;
   top: 4537px;
-  left: 75%;
+  left: 20%;
   z-index: 20;
 }
 
 .hammerhead img {
   width: var(--xxl);
-  animation: bob-gentle 4s ease-in-out infinite;
+  animation: bob-zippy 4s ease-in-out infinite;
 }
 
 .whale-shark {
@@ -1328,8 +1341,8 @@ body {
 
 .coelacanth {
   position: absolute;
-  top: 8250px;
-  left: 75%;
+  top: 8900px;
+  left: 10%;
   z-index: 20;
 }
 
