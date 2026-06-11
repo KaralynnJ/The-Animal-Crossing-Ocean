@@ -3,12 +3,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="particles.js" defer></script>
     <script src="depthline.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <script src="textbox.js" defer></script>
   </head>
   <body>
     <div class="title">
@@ -34,15 +29,7 @@
         <div class="caustics"></div>
         <div class="alt-caustics"></div>
       </div>
-      <div class="sunlight-zone">
-        <!-- <div class="zone-wrapper">
-          <div class="zone-marker">THE SUNLIGHT ZONE</div>
-          <div class="zone-description">
-            The brightest, warmest and most populated layer of the ocean, only
-            200m deep.
-          </div>
-        </div> -->
-      </div>
+      <div class="sunlight-zone"></div>
       <div class="sunlight-transition"></div>
       <div class="deep-ocean">
         <div class="twilight-zone">
@@ -69,219 +56,125 @@
       <div class="the-creatures">
         <div class="creature-wrapper blowfish">
           <img src="assets/creatures/Blowfish.png" alt="Blowfish" />
-          <div class="description">
-            Blowfish carry a deadly poison and are one of the most toxic
-            creature on earth. On top of that, it can inflate itself as a
-            defense mechanism.
-          </div>
         </div>
         <div class="creature-wrapper barred-knifejaw">
           <img
             src="assets/creatures/Barred_Knifejaw.png"
             alt="Barred Knifejaw"
           />
-          <div class="description">
-            Barred knifejaws always have seven stripes. They have strong teeth
-            to break the shells of urchins and mollusks.
-          </div>
         </div>
         <div class="creature-wrapper seahorse">
           <img src="assets/creatures/Sea_Horse.png" alt="Seahorse" />
-          <div class="description">
-            Seahorses wrap their tail around seaweed or coral so they don't
-            float away in the current.
-          </div>
         </div>
         <div class="creature-wrapper butterfly-fish">
-          <div class="butterfly-fish-image image"></div>
-          <div class="description">
-            Butterfly fish swim by flapping their fins, making them look like
-            butterflies. They prefer to swim in schools.
-          </div>
+          <img src="assets/creatures/Butterfly_Fish.png" alt="Butterfly Fish" />
         </div>
         <div class="creature-wrapper clownfish">
-          <div class="clownfish-image image"></div>
-          <div class="description">
-            Clownfish produce a special coating that prevents the sting of sea
-            anemones, allowing them to live in their feelers.
-          </div>
+          <img src="assets/creatures/Clown_Fish.png" alt="Clown Fish" />
         </div>
         <div class="creature-wrapper surgeon-fish">
-          <div class="surgeon-fish-image image"></div>
-          <div class="description">
-            The surgeonfish is rather timid and will hide between rocks or in
-            coral to sleep.
-          </div>
+          <img src="assets/creatures/Surgeonfish.png" alt="Surgeonfish" />
         </div>
         <div class="creature-wrapper pufferfish">
-          <div class="pufferfish-image image"></div>
-          <div class="description">
-            Like its cousin the blowfish, when the puffer fish feels threatened
-            it inflates into a spiky balloon, but it's not deadly poisonous.
-          </div>
+          <img src="assets/creatures/Puffer_Fish.png" alt="Puffer Fish" />
+        </div>
+        <div class="creature-wrapper ray">
+          <img src="assets/creatures/Ray.png" alt="String Ray" />
+        </div>
+        <div class="creature-wrapper moray">
+          <img src="assets/creatures/Moray_Eel.png" alt="Moray Eel" />
         </div>
         <div class="creature-wrapper anchovy">
-          <div class="anchovy-image image"></div>
-          <div class="description">
-            Anchovies feed by swimming with their mouths open to filter food
-            particles. They swim in large schools.
-          </div>
+          <img src="assets/creatures/Anchovy.png" alt="Anchovy" />
+        </div>
+        <div class="creature-wrapper ribbon-eel">
+          <img src="assets/creatures/Ribbon_Eel.png" alt="Ribbon Eel" />
         </div>
         <div class="creature-wrapper zebra-turkeyfish">
-          <div class="zebra-turkeyfish-image image"></div>
-          <div class="description">
-            The zebra turkeyfish's long fins are very pretty, but they're hiding
-            poisonous spikes. They're a type of lionfish.
-          </div>
+          <img
+            src="assets/creatures/Zebra_Turkeyfish.png"
+            alt="Zebra Turkeyfish"
+          />
         </div>
         <div class="creature-wrapper sturgeon">
-          <div class="sturgeon-image image"></div>
-          <div class="description">
-            Despite being known as bottom-feeders, sturgeon rarely go beyond 60m
-            deep. They are best known for caviar.
-          </div>
+          <img src="assets/creatures/Sturgeon.png" alt="Sturgeon" />
         </div>
         <div class="creature-wrapper giant-trevally">
-          <div class="giant-trevally-image image"></div>
-          <div class="description">
-            The Giant Trevally sometimes uses other predators to distract their
-            prey, and can jump out of the water to catch sea birds. It stays
-            around 80m.
-          </div>
+          <img src="assets/creatures/Giant_Trevally.png" alt="Giant Trevally" />
         </div>
         <div class="creature-wrapper mahi-mahi">
-          <div class="mahi-mahi-image image"></div>
-          <div class="description">
-            The mahi-mahi is sometimes called the dolphinfish, though they
-            aren't dolphins. They live around 85m.
-          </div>
+          <img src="assets/creatures/Mahi-Mahi.png" alt="Mahi-mahi" />
         </div>
         <div class="creature-wrapper olive-flounder">
-          <div class="olive-flounder-image image"></div>
-          <div class="description">
-            A flatfish that lives along the sandy ocean floor. Their eyes are on
-            the left, unlike the dab's which are on the right.
-          </div>
+          <img src="assets/creatures/Olive_Flounder.png" alt="Olive Flounder" />
         </div>
         <div class="creature-wrapper dab">
-          <div class="dab-image image"></div>
-          <div class="description">
-            A flatfish that lives along the sandy ocean floor. Their eyes are on
-            the right, unlike the olive flounder's which are on the left.
-          </div>
+          <img src="assets/creatures/Dab.png" alt="Dab" />
         </div>
         <div class="creature-wrapper napoleonfish">
-          <div class="napoleonfish-image image"></div>
-          <div class="description">
-            Napoleonfish, also called the humphead wrasse, are all born female.
-            As they mature, some turn into males and become more blue.
-          </div>
-        </div>
-        <div class="creature-wrapper free-dive">
-          <div class="free-dive-image image"></div>
-          <div class="description">
-            Alexey Molchanoc has the deepest equipment-free freediving record at
-            102m.
-          </div>
+          <img src="assets/creatures/Napoleonfish.png" alt="Napoleonfish" />
         </div>
         <div class="creature-wrapper sea-bass">
-          <div class="sea-bass-image image"></div>
-          <div class="description">
-            There are several different kinds, and can range from 1.5 inches
-            long to 9 feet.
-          </div>
+          <img src="assets/creatures/Sea_Bass.png" alt="Sea Bass" />
+        </div>
+
+        <div class="creature-wrapper suckerfish">
+          <img src="assets/creatures/Suckerfish.png" alt="Suckerfish" />
         </div>
         <div class="creature-wrapper great-white">
-          <div class="great-white-image image"></div>
-          <div class="description">
-            The Thick-Billed Murre can dive to a depth of about 210m, the
-            deepest of any flighted bird.
-          </div>
+          <img
+            src="assets/creatures/Great_White_Shark.png"
+            alt="Great White Shark"
+          />
         </div>
         <!-- TWILIGHT -->
-        <div class="creature-wrapper thick-billed-murre">
-          <div class="thick-billed-murre-image image"></div>
-          <div class="description">
-            The Thick-Billed Murre can dive to a depth of about 210m, the
-            deepest of any flighted bird.
-          </div>
-        </div>
         <div class="creature-wrapper horse-mackerel">
-          <div class="horse-mackerel-image image"></div>
-          <div class="description">
-            Horse mackerel are a popular source of food. Their scales are tough
-            and need to be removed before eating.
-          </div>
+          <img src="assets/creatures/Horse_Mackerel.png" alt="Horse Mackerel" />
         </div>
         <div class="creature-wrapper red-snapper">
-          <div class="red-snapper-image image"></div>
-          <div class="description">
-            Red snapper like to hide around shipwrecks. They're symbols of luck
-            in some cultures.
-          </div>
-        </div>
-        <div class="creature-wrapper scuba-dive">
-          <div class="scuba-dive-image image"></div>
-          <div class="description">
-            The deepest scuba dive is 332m, set by Ahmed Gabr.
-          </div>
+          <img src="assets/creatures/Red_Snapper.png" alt="Red Snapper" />
         </div>
         <div class="creature-wrapper sea-butterfly">
-          <div class="sea-butterfly-image image"></div>
-          <div class="description">
-            Sea butterflies are a type of sea snail that swim by flapping their
-            winglike arms. They float up to the surface at night to feed and go
-            down to ~400m during the day to hide from predators.
-          </div>
+          <img src="assets/creatures/Sea_Butterfly.png" alt="Sea Butterfly" />
         </div>
-        <div class="creature-wrapper emperor-penguin">
-          <div class="emperor-penguin-image image"></div>
-          <div class="description">
-            Emperor penguins dive the deepest, reaching a max of 565m. They can
-            stay underwater for up to 30 minutes at a time.
-          </div>
+        <div class="creature-wrapper mola-mola">
+          <img src="assets/creatures/Ocean_Sunfish.png" alt="Ocean Sunfish" />
+        </div>
+        <div class="creature-wrapper squid">
+          <img src="assets/creatures/Squid.png" alt="Squid" />
         </div>
         <div class="creature-wrapper blue-marlin">
-          <div class="blue-marlin-image image"></div>
-          <div class="description">
-            Blue marlins usually swim in the top 100m but can dive as deep as
-            600m to feed.
-          </div>
+          <img src="assets/creatures/Blue_Marlin.png" alt="Blue Marlin" />
         </div>
         <div class="creature-wrapper barreleye">
-          <div class="barreleye-image image"></div>
-          <div class="description">
-            Bluefin tuna are one of the deepest diving tuna, reaching depths of
-            ~800m.
-          </div>
+          <img src="assets/creatures/Barreleye.png" alt="Barreleye" />
         </div>
         <div class="creature-wrapper bluefin-tuna">
-          <div class="bluefin-tuna-image image"></div>
-          <div class="description">
-            Bluefin tuna are one of the deepest diving tuna, reaching depths of
-            ~800m.
-          </div>
+          <img src="assets/creatures/Tuna.png" alt="Tuna" />
+        </div>
+        <div class="creature-wrapper oarfish">
+          <img src="assets/creatures/Oarfish.png" alt="Oarfish" />
         </div>
         <div class="creature-wrapper saw-shark">
-          <div class="saw-shark-image image"></div>
-          <div class="description">
-            Bluefin tuna are one of the deepest diving tuna, reaching depths of
-            ~800m.
-          </div>
+          <img src="assets/creatures/Saw_Shark.png" alt="Saw Shark" />
+        </div>
+        <div class="creature-wrapper football-fish">
+          <img src="assets/creatures/Football_Fish.png" alt="Football Fish" />
         </div>
         <div class="creature-wrapper salmon">
-          <div class="salmon-image image"></div>
-          <div class="description">
-            When salmon are in the ocean, they've been found at depths over
-            1000m. They return to fresh waters to spawn.
-          </div>
+          <img src="assets/creatures/King_Salmon.png" alt="Salmon" />
+        </div>
+        <div class="creature-wrapper hammerhead">
+          <img
+            src="assets/creatures/Hammerhead_Shark.png"
+            alt="Hammerhead Shark"
+          />
         </div>
         <div class="creature-wrapper whale-shark">
-          <div class="whale-shark-image image"></div>
-          <div class="description">
-            When salmon are in the ocean, they've been found at depths over
-            1000m. They return to fresh waters to spawn.
-          </div>
+          <img src="assets/creatures/Whale_Shark.png" alt="Whale Shark" />
+        </div>
+        <div class="creature-wrapper coelacanth">
+          <img src="assets/creatures/Coelacanth.png" alt="Coelacanth" />
         </div>
       </div>
       <div id="depth-line" class="depth-line">Meters Deep</div>

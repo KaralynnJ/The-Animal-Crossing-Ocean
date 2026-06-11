@@ -1,6 +1,20 @@
+@font-face {
+  font-family: "Rodin Himawari";
+  src: url("fonts/RodinHimawariPro.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Seurat";
+  src: url("fonts/SeuratPro.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Rodin Himawari", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -315,15 +329,16 @@ body {
 }
 
 .ocean {
+  height: 12500px;
   background: linear-gradient(
     to bottom,
-    /*sunlight zone*/ #41b8e6,
-    /*twilight zone*/ #2a5f83 1.8%,
-    /*midnight zone*/ #000000 7.25%,
-    /*abyssal zone*/ #000000 27.19%,
-    /*hadal zone*/ #000000 100%
+    #41b8e6,
+    /* surface */ #2a5f83 26.4%,
+    /* 200m — sunlight/twilight boundary (3300/12500) */ #1a3a52 70%,
+    /* ~550m — mid twilight, getting dark */ #0d1b2a 92%,
+    /* ~700m — near whale shark depth */ #060e17 100%
+      /* bottom — very deep twilight */
   );
-  height: 182061px;
 }
 
 .wave-container {
@@ -541,7 +556,7 @@ body {
 
 .deep-ocean {
   position: relative;
-  height: 178761px;
+  height: 9200px;
 }
 
 .particle-container-far,
@@ -626,7 +641,7 @@ body {
 /* Twilight Zone */
 
 .twilight-zone {
-  height: 13200px;
+  height: 9200px;
 }
 
 .twilight-zone .zone-wrapper {
@@ -644,8 +659,8 @@ body {
 }
 
 .twilight-transition {
-  height: 13200px;
-  margin-top: -13200px;
+  height: 9200px;
+  margin-top: -9200px;
   position: relative;
   z-index: 6;
   background: linear-gradient(
@@ -659,7 +674,7 @@ body {
 .twilight-dapple {
   position: relative;
   z-index: 5;
-  height: calc(13200px);
+  height: calc(9200px);
   margin-top: -75px;
   background-image:
     radial-gradient(at 40% 20%, hsla(186, 50%, 50%, 0.5) 0px, transparent 50%),
@@ -676,28 +691,10 @@ body {
   animation: colorShift 10s infinite;
 }
 
-/* Mighnight Zone */
-
-.midnight-zone {
-  height: 49500px;
-}
-
-/* Abyssal Zone */
-
-.abyssal-zone {
-  height: 33000px;
-}
-
-/* Hadal Zone */
-
-.hadal-zone {
-  height: 83061px;
-}
-
 /* In the Sea */
 
 .the-creatures {
-  margin-top: -182061px;
+  margin-top: -12500px;
   height: 100%;
   position: relative;
   z-index: 21;
@@ -745,40 +742,110 @@ body {
   background-repeat: no-repeat;
 }
 
-.description {
-  display: none;
-  transition: display 0.3s ease-in-out;
-  background: #def9fc;
-  border: 4px solid #76d2df;
-  border-radius: 40px;
-  padding: 20px 32px;
-  font-weight: bold;
-  color: #3a3220;
-  line-height: 1.4;
-  position: relative;
-  min-width: 180px;
-  max-width: 280px;
-  width: max-content;
-  z-index: 100;
-  position: absolute;
-  top: 100%;
+#blathers-dialog {
+  position: fixed;
+  bottom: -220px;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 0.5rem;
+  width: min(720px, calc(100vw - 32px));
+  background: #fffae4;
+  border: 4px solid #ffb869;
+  border-radius: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px 20px 20px;
+  z-index: 1000;
+  cursor: pointer;
+  transition: bottom 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-sizing: border-box;
 }
 
-.description::after {
-  content: "";
+#blathers-dialog.visible {
+  bottom: 20px;
+}
+
+.blathers-portrait {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  background: #ffd6a7;
+  border: 3px solid #ffb869;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blathers-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.blathers-portrait.no-img::after {
+  content: "🦉";
+  font-size: 40px;
+}
+
+.blathers-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.blathers-name {
+  font-family: "Seurat", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  color: #3a3220;
+  text-transform: uppercase;
+  margin-bottom: 8px;
   position: absolute;
-  top: -35px; /* hang it above */
-  left: -25px;
-  width: 60px;
-  height: 60px;
-  background-image: url(assets/blathers.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  transform: rotate(-10deg);
+  left: -20px;
+  transform: rotate(-7deg);
+  background: #7c5534;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 100px;
+  top: -20px;
+}
+
+.blathers-text {
+  font-family: "Rodin Himawari", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: #3a3220;
+  line-height: 1.45;
+  min-height: 3em;
+}
+
+.blathers-advance {
+  flex-shrink: 0;
+  font-size: 18px;
+  color: #3a3220;
+  align-self: flex-end;
+  opacity: 0;
+  transition: opacity 0.2s;
+  animation: bounce-arrow 0.7s ease-in-out infinite;
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+}
+
+.blathers-advance.visible {
+  opacity: 1;
+}
+
+@keyframes bounce-arrow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
 }
 
 @keyframes bob-gentle {
@@ -893,8 +960,6 @@ body {
 }
 
 .butterfly-fish img {
-  background-image: url(assets/creatures/Butterfly_Fish.png);
-  aspect-ratio: 240/186;
   width: var(--sm);
   animation: bob-lazy 4s ease-in-out infinite;
 }
@@ -907,8 +972,6 @@ body {
 }
 
 .surgeon-fish img {
-  background-image: url(assets/creatures/Surgeonfish.png);
-  aspect-ratio: 305/167;
   width: var(--sm);
   animation: bob-zippy 4s ease-in-out infinite;
 }
@@ -920,8 +983,6 @@ body {
 }
 
 .pufferfish img {
-  background-image: url(assets/creatures/Puffer_Fish.png);
-  aspect-ratio: 368/119;
   width: var(--md);
   animation: bob-gentle 4s ease-in-out infinite;
 }
@@ -934,9 +995,7 @@ body {
 }
 
 .ray img {
-  background-color: saddlebrown;
-  width: 100px;
-  height: 50px;
+  width: var(--xl);
   animation: bob-gentle 4s ease-in-out infinite;
 }
 
@@ -948,9 +1007,7 @@ body {
 }
 
 .moray img {
-  background-color: cornsilk;
-  width: 100px;
-  height: 50px;
+  width: var(--md);
   animation: bob-gentle 4s ease-in-out infinite;
 }
 
@@ -962,9 +1019,7 @@ body {
 }
 
 .anchovy img {
-  background-color: silver;
-  width: 100px;
-  height: 50px;
+  width: var(--sm);
   animation: bob-gentle 4s ease-in-out infinite;
 }
 
@@ -976,9 +1031,7 @@ body {
 }
 
 .ribbon-eel img {
-  background-color: yellow;
-  width: 100px;
-  height: 50px;
+  width: var(--md);
   animation: bob-lazy 4s ease-in-out infinite;
 }
 
@@ -990,9 +1043,7 @@ body {
 }
 
 .zebra-turkeyfish img {
-  background-color: red;
-  width: 100px;
-  height: 50px;
+  width: var(--md);
   animation: bob-lazy 4s ease-in-out infinite;
 }
 
@@ -1004,9 +1055,7 @@ body {
 }
 
 .sturgeon img {
-  background-color: brown;
-  width: 100px;
-  height: 50px;
+  width: var(--xxl);
   animation: bob-lazy 4s ease-in-out infinite;
 }
 
@@ -1018,10 +1067,8 @@ body {
 }
 
 .giant-trevally img {
-  background-color: grey;
+  width: var(--lg);
   animation: bob-zippy 4s ease-in-out infinite;
-  width: 100px;
-  height: 50px;
 }
 
 .mahi-mahi {
@@ -1032,10 +1079,8 @@ body {
 }
 
 .mahi-mahi img {
-  background-color: greenyellow;
+  width: var(--lg);
   animation: bob-gentle 4s ease-in-out infinite;
-  width: 100px;
-  height: 50px;
 }
 
 .olive-flounder {
@@ -1046,10 +1091,8 @@ body {
 }
 
 .olive-flounder img {
-  background-image: url(assets/creatures/Olive_Flounder.png);
+  width: var(--lg);
   animation: bob-lazy 4s ease-in-out infinite;
-  height: 50px;
-  width: 91px;
 }
 
 .dab {
@@ -1060,51 +1103,32 @@ body {
 }
 
 .dab img {
-  background-image: url(assets/creatures/Dab.png);
+  width: var(--md);
   animation: bob-lazy 4s ease-in-out infinite;
-  width: 100px;
-  height: 50px;
 }
 
 .napoleonfish {
   position: absolute;
-  top: 1650px;
-  left: 80%;
+  top: 990px;
+  left: 10%;
   z-index: 20;
 }
 
 .napoleonfish img {
-  background-color: darkcyan;
+  width: var(--xxl);
   animation: bob-gentle 4s ease-in-out infinite;
-  width: 100px;
-  height: 50px;
-}
-
-.free-dive {
-  position: absolute;
-  top: 1683px;
-  left: 50%;
-  z-index: 20;
-}
-
-.free-dive img {
-  background-color: green;
-  width: 100px;
-  height: 50px;
 }
 
 .sea-bass {
   position: absolute;
   top: 2145px;
-  left: 70%;
+  left: 60%;
   z-index: 20;
 }
 
 .sea-bass img {
-  background-image: url(assets/creatures/Sea_Bass.png);
-  aspect-ratio: 647/252;
+  width: (--xl);
   animation: bob-gentle 4s ease-in-out infinite;
-  width: 274px;
 }
 
 .suckerfish {
@@ -1115,10 +1139,8 @@ body {
 }
 
 .suckerfish img {
-  background-image: url(assets/creatures/Sea_Bass.png);
-  aspect-ratio: 947/394;
+  width: var(--md);
   animation: bob-gentle 4s ease-in-out infinite;
-  width: 600px;
 }
 
 .great-white {
@@ -1129,27 +1151,11 @@ body {
 }
 
 .great-white img {
-  background-image: url(assets/creatures/Great_White_Shark.png);
-  aspect-ratio: 947/394;
-  width: 600px;
+  width: var(--xxl);
   animation: bob-gentle 4s ease-in-out infinite;
-  animation-delay: 0s;
 }
 
 /* Twilight Zone */
-
-.thick-billed-murre {
-  position: absolute;
-  top: 3465px;
-  left: 10rem;
-  z-index: 20;
-}
-
-.thick-billed-murre img {
-  background-color: grey;
-  width: 100px;
-  height: 50px;
-}
 
 .horse-mackerel {
   position: absolute;
@@ -1159,11 +1165,8 @@ body {
 }
 
 .horse-mackerel img {
-  background-image: url("assets/creatures/Horse_Mackerel.png");
-  aspect-ratio: 162/61;
-  width: 55px;
+  width: var(--sm);
   animation: bob-zippy 4s ease-in-out infinite;
-  animation-delay: 0s;
 }
 
 .red-snapper {
@@ -1174,24 +1177,8 @@ body {
 }
 
 .red-snapper img {
-  background-image: url("assets/creatures/Red_Snapper.png");
-  aspect-ratio: 484/235;
-  width: 100px;
+  width: var(--lg);
   animation: bob-gentle 4s ease-in-out infinite;
-  animation-delay: 0s;
-}
-
-.scuba-dive {
-  position: absolute;
-  top: 5478px;
-  left: 30%;
-  z-index: 20;
-}
-
-.scuba-dive img {
-  background-color: green;
-  width: 100px;
-  height: 50px;
 }
 
 .sea-butterfly {
@@ -1202,9 +1189,8 @@ body {
 }
 
 .sea-butterfly img {
-  background-color: orange;
-  width: 100px;
-  height: 50px;
+  height: var(--xs);
+  animation: bob-gentle 4s ease-in-out infinite;
 }
 
 .mola-mola {
@@ -1215,35 +1201,20 @@ body {
 }
 
 .mola-mola img {
-  background-color: black;
-  width: 100px;
-  height: 50px;
+  height: var(--xxl);
+  animation: bob-lazy 4s ease-in-out infinite;
 }
 
-.little-squid {
+.squid {
   position: absolute;
   top: 8000px;
   left: 30%;
   z-index: 20;
 }
 
-.little-squid img {
-  background-color: white;
-  width: 100px;
-  height: 50px;
-}
-
-.emperor-penguin {
-  position: absolute;
-  top: 8250px;
-  left: 30%;
-  z-index: 20;
-}
-
-.emperor-penguin img {
-  background-color: black;
-  width: 100px;
-  height: 50px;
+.squid img {
+  height: var(--md);
+  animation: bob-lazy 4s ease-in-out infinite;
 }
 
 .blue-marlin {
@@ -1254,11 +1225,8 @@ body {
 }
 
 .blue-marlin img {
-  background-color: dodgerblue;
-  width: 100px;
-  height: 50px;
+  width: var(--xxl);
   animation: bob-zippy 4s ease-in-out infinite;
-  animation-delay: 0s;
 }
 
 .barreleye {
@@ -1268,27 +1236,21 @@ body {
   z-index: 20;
 }
 
-.barreleye img {
-  background-image: url(assets/creatures/Barreleye.png);
-  aspect-ratio: 232/143;
-  width: 55px;
-  animation: bob-gentle 4s ease-in-out infinite;
-  animation-delay: 0s;
-}
-
 .bluefin-tuna {
   position: absolute;
-  top: 13200px;
+  top: 9900px;
   left: 75%;
   z-index: 20;
 }
 
 .bluefin-tuna img {
-  background-color: slategray;
-  width: 100px;
-  height: 50px;
+  width: var(--xxl);
   animation: bob-gentle 4s ease-in-out infinite;
-  animation-delay: 0s;
+}
+
+.barreleye img {
+  width: var(--sm);
+  animation: bob-gentle 4s ease-in-out infinite;
 }
 
 .oarfish {
@@ -1299,11 +1261,8 @@ body {
 }
 
 .oarfish img {
-  background-color: red;
-  width: 100px;
-  height: 50px;
+  width: var(--xxl);
   animation: bob-gentle 4s ease-in-out infinite;
-  animation-delay: 0s;
 }
 
 .saw-shark {
@@ -1314,11 +1273,8 @@ body {
 }
 
 .saw-shark img {
-  background-image: url(assets/creatures/Saw_Shark.png);
-  aspect-ratio: 673/120;
-  width: 767px;
+  width: var(--xxl);
   animation: bob-gentle 4s ease-in-out infinite;
-  animation-delay: 0s;
 }
 
 .football-fish {
@@ -1329,69 +1285,55 @@ body {
 }
 
 .football-fish img {
-  background-color: salmon;
-  width: 100px;
-  height: 50px;
+  width: var(--lg);
   animation: bob-gentle 4s ease-in-out infinite;
-  animation-delay: 0s;
 }
 
 .salmon {
   position: absolute;
-  top: 16650px;
+  top: 4950px;
   left: 50%;
   z-index: 20;
 }
 
 .salmon img {
-  background-image: url(assets/creatures/King_Salmon.png);
-  aspect-ratio: 744/305;
-  width: 515px;
+  width: var(--xl);
   animation: bob-gentle 4s ease-in-out infinite;
-  animation-delay: 0s;
 }
 
 .hammerhead {
   position: absolute;
-  top: 17193px;
+  top: 4537px;
   left: 75%;
   z-index: 20;
 }
 
 .hammerhead img {
-  background-color: salmon;
-  width: 100px;
-  height: 50px;
+  width: var(--xxl);
   animation: bob-gentle 4s ease-in-out infinite;
-  animation-delay: 0s;
 }
 
 .whale-shark {
   position: absolute;
-  top: 31000px;
-  left: 5%;
+  top: 11500px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 20;
 }
 
 .whale-shark img {
-  background-image: url(assets/creatures/Whale_Shark.png);
-  aspect-ratio: 1019/333;
-  width: 1500px;
+  width: calc(100vw - 4rem);
   animation: bob-gentle 4s ease-in-out infinite;
-  animation-delay: 0s;
 }
 
 .coelacanth {
   position: absolute;
-  top: 37950px;
+  top: 8250px;
   left: 75%;
   z-index: 20;
 }
 
 .coelacanth img {
-  background-color: slategrey;
-  width: 100px;
-  height: 50px;
+  width: var(--xxl);
   animation: bob-gentle 4s ease-in-out infinite;
-  animation-delay: 0s;
 }
