@@ -1366,7 +1366,7 @@ body {
   }
   #blathers-dialog {
     min-height: 20vh;
-    bottom: -30vh;
+    bottom: -100vh;
   }
 }
 
@@ -1377,6 +1377,6 @@ body {
 
   #blathers-dialog {
     min-height: 25vh;
-    bottom: -40vh;
+    bottom: -100vh;
   }
 }
