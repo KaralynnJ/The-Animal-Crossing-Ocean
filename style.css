@@ -20,6 +20,7 @@ body {
   font-style: normal;
   color: white;
   background-color: #000000;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .depth-line {

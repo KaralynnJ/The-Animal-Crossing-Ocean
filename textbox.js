@@ -126,7 +126,8 @@ const blathersDialog = {
   ],
   "mola-mola": [
     "The ocean sunfish is a large relative of the blowfish with an unusual shape, like a fish head with a tail.",
-    "They are a fairly relaxed species, often content to ride where the currents take them. This is fortunate as, otherwise, the sight of a large head coming toward you might be alarming!",
+    "They are a fairly relaxed species, often content to ride where the currents take them.",
+    "This is fortunate as, otherwise, the sight of a large head coming toward you might be alarming!",
   ],
   squid: [
     "Well, first off, squids are members of the mollusk family, just like the octopus. Many mollusks like snails and clams have shells, but the squid's body is almost completely soft.",
@@ -175,7 +176,8 @@ const blathersDialog = {
   "whale-shark": [
     "The mighty whale shark is the largest species of fish in the world with specimens up to 60 feet long!",
     "Unlike many of their kin in the shark family, whale sharks are nonviolent, eating only plankton and such.",
-    "They grow slowly and live long, relaxed lives of filter feeding and leisure in warm waters. So if you ever have to choose a fish as a roommate, you could do worse than the whale shark.",
+    "They grow slowly and live long, relaxed lives of filter feeding and leisure in warm waters.",
+    "So if you ever have to choose a fish as a roommate, you could do worse than the whale shark.",
     "Unless you can't swim.",
   ],
   coelacanth: [
@@ -258,6 +260,7 @@ function advanceDialog() {
 function closeDialog() {
   dialogBox.classList.remove("visible");
   if (animationFrame) clearTimeout(animationFrame);
+  showLine("");
   currentLines = [];
   currentIndex = 0;
 }
