@@ -789,6 +789,15 @@ body {
   object-fit: contain;
 }
 
+.blathers-picture {
+  width: 10rem;
+  height: 10rem;
+  object-fit: contain;
+  position: absolute;
+  top: -9rem;
+  left: -2rem;
+}
+
 .blathers-portrait.no-img::after {
   content: "🦉";
   font-size: 40px;
@@ -1357,7 +1366,7 @@ body {
   }
   #blathers-dialog {
     min-height: 20vh;
-    bottom: -25vh;
+    bottom: -30vh;
   }
 }
 
@@ -1368,6 +1377,6 @@ body {
 
   #blathers-dialog {
     min-height: 25vh;
-    bottom: -30vh;
+    bottom: -40vh;
   }
 }

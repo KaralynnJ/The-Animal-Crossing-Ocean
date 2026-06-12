@@ -40,7 +40,7 @@ const blathersDialog = {
   ray: [
     "The ray is an unusually shaped fish with a flat body and a long body, somewhat related to sharks.",
     "Seen from the bottom, the mouth on its stomach appears to be smiling, which is objectively adorable.",
-    "But be cautious—unlike most cute animals, some rays are extremely venomous. BEWARE THE SMILE.",
+    "But be cautious... unlike most cute animals, some rays are extremely venomous. BEWARE THE SMILE.",
   ],
   moray: [
     "Despite its rather frightening features, the moray eel is really a very cowardly fish.",
@@ -190,9 +190,7 @@ const blathersDialog = {
 const dialogBox = document.createElement("div");
 dialogBox.id = "blathers-dialog";
 dialogBox.innerHTML = `
-  <div class="blathers-portrait">
-    <img src="assets/blathers.png" alt="Blathers" onerror="this.style.display='none'; this.parentElement.classList.add('no-img')" />
-  </div>
+ <img class="blathers-picture" src="assets/Blathers.webp" alt="Blathers"/>
   <div class="blathers-content">
     <div class="blathers-name">Blathers</div>
     <div class="blathers-text"></div>
