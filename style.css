@@ -35,7 +35,7 @@ body {
   transform: translateY(-50%);
   transition: opacity 0.3s ease-in-out;
   width: 100%;
-  z-index: 10000;
+  z-index: 999;
   opacity: 0;
 }
 
@@ -329,15 +329,14 @@ body {
 }
 
 .ocean {
-  height: 12500px;
+  height: 17500px;
   background: linear-gradient(
     to bottom,
     #41b8e6,
-    /* surface */ #2a5f83 26.4%,
-    /* 200m — sunlight/twilight boundary (3300/12500) */ #1a3a52 70%,
-    /* ~550m — mid twilight, getting dark */ #0d1b2a 92%,
-    /* ~700m — near whale shark depth */ #060e17 100%
-      /* bottom — very deep twilight */
+    #2a5f83 18.9%,
+    #1a3a52 65%,
+    #0d1b2a 93%,
+    #060e17 100%
   );
 }
 
@@ -473,7 +472,7 @@ body {
     filter: hue-rotate(0deg);
   }
   50% {
-    filter: hue-rotate(20deg);
+    filter: hue-rotate(30deg);
   }
   100% {
     filter: hue-rotate(0deg);
@@ -556,7 +555,7 @@ body {
 
 .deep-ocean {
   position: relative;
-  height: 9200px;
+  height: 14200px;
 }
 
 .particle-container-far,
@@ -641,7 +640,7 @@ body {
 /* Twilight Zone */
 
 .twilight-zone {
-  height: 9200px;
+  height: 14200px;
 }
 
 .twilight-zone .zone-wrapper {
@@ -659,14 +658,15 @@ body {
 }
 
 .twilight-transition {
-  height: 9200px;
-  margin-top: -9200px;
+  height: 14200px;
+  margin-top: -14200px;
   position: relative;
   z-index: 6;
   background: linear-gradient(
     to bottom,
-    hsla(204, 51%, 34%, 1) 2%,
-    hsla(0, 0%, 0%, 0.5) 75%,
+    hsla(204, 51%, 34%, 1) 0.5%,
+    hsla(0, 0%, 0%, 0.5) 40%,
+    hsla(0, 0%, 0%, 0.8) 60%,
     hsla(0, 0%, 0%, 1) 98%
   );
 }
@@ -674,7 +674,7 @@ body {
 .twilight-dapple {
   position: relative;
   z-index: 5;
-  height: calc(9200px);
+  height: calc(14200px);
   margin-top: -75px;
   background-image:
     radial-gradient(at 40% 20%, hsla(186, 50%, 50%, 0.5) 0px, transparent 50%),
@@ -694,7 +694,7 @@ body {
 /* In the Sea */
 
 .the-creatures {
-  margin-top: -12500px;
+  margin-top: -17500px;
   height: 100%;
   position: relative;
   z-index: 21;
@@ -706,18 +706,7 @@ body {
   --lg: calc(325px * var(--scale));
   --xl: calc(525px * var(--scale));
   --xxl: calc(850px * var(--scale));
-}
-
-@media (max-width: 768px) {
-  .the-creatures {
-    --scale: 0.6;
-  }
-}
-
-@media (max-width: 480px) {
-  .the-creatures {
-    --scale: 0.4;
-  }
+  --xxxl: calc(1200px * var(--scale));
 }
 
 .creature-wrapper {
@@ -760,7 +749,7 @@ body {
   bottom: -220px;
   left: 50%;
   transform: translateX(-50%);
-  width: min(720px, calc(100vw - 32px));
+  width: min(720px, calc(100vw - 3rem));
   background: #fffae4;
   border: 4px solid #ffb869;
   border-radius: 16px;
@@ -772,6 +761,7 @@ body {
   cursor: pointer;
   transition: bottom 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   box-sizing: border-box;
+  user-select: none;
 }
 
 #blathers-dialog.visible {
@@ -837,7 +827,7 @@ body {
 .blathers-advance {
   flex-shrink: 0;
   font-size: 18px;
-  color: #3a3220;
+  color: #ffb869;
   align-self: flex-end;
   opacity: 0;
   transition: opacity 0.2s;
@@ -1014,8 +1004,8 @@ body {
 
 .moray {
   position: absolute;
-  top: 700px;
-  left: 40%;
+  top: 600px;
+  right: 20%;
   z-index: 20;
 }
 
@@ -1074,7 +1064,7 @@ body {
 
 .giant-trevally {
   position: absolute;
-  top: 1550px;
+  top: 1600px;
   left: 50%;
   z-index: 20;
 }
@@ -1098,7 +1088,7 @@ body {
 
 .olive-flounder {
   position: absolute;
-  top: 1700px;
+  top: 1800px;
   left: 70%;
   z-index: 20;
 }
@@ -1110,7 +1100,7 @@ body {
 
 .dab {
   position: absolute;
-  top: 1700px;
+  top: 1800px;
   left: 30%;
   z-index: 20;
 }
@@ -1184,7 +1174,7 @@ body {
 
 .red-snapper {
   position: absolute;
-  top: 4300px;
+  top: 4200px;
   left: 20%;
   z-index: 20;
 }
@@ -1209,7 +1199,7 @@ body {
 .mola-mola {
   position: absolute;
   top: 7920px;
-  left: 25%;
+  right: 15%;
   z-index: 20;
 }
 
@@ -1257,7 +1247,7 @@ body {
 .bluefin-tuna {
   position: absolute;
   top: 10500px;
-  left: 25%;
+  right: 10%;
   z-index: 20;
 }
 
@@ -1268,19 +1258,19 @@ body {
 
 .oarfish {
   position: absolute;
-  top: 16000px;
-  left: 20%;
+  top: 15800px;
+  right: 10%;
   z-index: 20;
 }
 
 .oarfish img {
-  width: var(--xxl);
+  width: var(--xxxl);
   animation: bob-gentle 4s ease-in-out infinite;
 }
 
 .saw-shark {
   position: absolute;
-  top: 16200px;
+  top: 14850px;
   left: 10%;
   z-index: 20;
 }
@@ -1293,7 +1283,7 @@ body {
 .football-fish {
   position: absolute;
   top: 16300px;
-  left: 75%;
+  left: 20%;
   z-index: 20;
 }
 
@@ -1305,7 +1295,7 @@ body {
 .salmon {
   position: absolute;
   top: 5000px;
-  left: 50%;
+  right: 15%;
   z-index: 20;
 }
 
@@ -1317,7 +1307,7 @@ body {
 .hammerhead {
   position: absolute;
   top: 4537px;
-  left: 20%;
+  left: 30%;
   z-index: 20;
 }
 
@@ -1335,7 +1325,7 @@ body {
 }
 
 .whale-shark img {
-  width: calc(100vw - 4rem);
+  width: var(--xxxl);
   animation: bob-gentle 4s ease-in-out infinite;
 }
 
@@ -1349,4 +1339,33 @@ body {
 .coelacanth img {
   width: var(--xxl);
   animation: bob-gentle 4s ease-in-out infinite;
+}
+
+/* MEDIA */
+
+@media (max-width: 1200px) {
+  .the-creatures {
+    --scale: 0.6;
+  }
+}
+
+@media (max-width: 800px) {
+  .the-creatures {
+    --scale: 0.4;
+  }
+  #blathers-dialog {
+    min-height: 20vh;
+    bottom: -25vh;
+  }
+}
+
+@media (max-width: 550px) {
+  .the-creatures {
+    --scale: 0.3;
+  }
+
+  #blathers-dialog {
+    min-height: 25vh;
+    bottom: -30vh;
+  }
 }
