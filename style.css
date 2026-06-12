@@ -164,11 +164,11 @@ body {
 /* Sun drops and fades */
 @keyframes sunSet {
   0% {
-    bottom: 70%;
+    bottom: 80%;
     opacity: 1;
   }
   85% {
-    bottom: 70%;
+    bottom: 80%;
     opacity: 1;
   }
   99% {
@@ -191,7 +191,7 @@ body {
     opacity: 1;
   }
   100% {
-    bottom: 70%;
+    bottom: 80%;
     opacity: 1;
   }
 }
@@ -248,22 +248,22 @@ body {
     opacity: 0;
   } /* hidden during day */
   92% {
-    bottom: 60%;
+    bottom: 70%;
     opacity: 1;
   } /* rises as sun sets */
   100% {
-    bottom: 65%;
+    bottom: 75%;
     opacity: 1;
   } /* settled in night sky */
 }
 
 @keyframes moonSet {
   0% {
-    bottom: 65%;
+    bottom: 75%;
     opacity: 1;
   }
   80% {
-    bottom: 65%;
+    bottom: 75%;
     opacity: 1;
   }
   95% {
