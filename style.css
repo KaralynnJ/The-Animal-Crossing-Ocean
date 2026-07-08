@@ -748,7 +748,7 @@ body {
 
 #blathers-dialog {
   position: fixed;
-  bottom: -220px;
+  bottom: -30%;
   left: 50%;
   transform: translateX(-50%);
   width: min(720px, calc(100vw - 3rem));
